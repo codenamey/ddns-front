@@ -48,8 +48,18 @@ export default function Management() {
                                   onChange={handleInputChange}
 
                               />
+                              <Controls.Input
+                                  name="ipaddress"
+                                  label="ipaddress"
+                                  value={values.ipaddress}
+                                  onChange={handleInputChange}
+
+                              />
                           </Grid>
-                          <Grid items xs={2} style={{ lineHeight: "36px"}}>result: </Grid>
+                          <Grid items xs={3} style={{ lineHeight: "36px"}}>
+                              {values.subDNS ? "domain  name: " + values.subDNS + ".ddns.fi" : ''}<br />
+                              {values.subDNS ? "points to ip: " + values.ipaddress + "" : ''}
+                          </Grid>
                       </Grid>
                       <Controls.Button  text="Lähetä" onClick={sendData}>Lähetä</Controls.Button>
                   </Form>
